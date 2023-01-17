@@ -4,55 +4,52 @@
         <title>Шифр Цезаря</title>
         <link rel="stylesheet" href="styles/styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type='module' src="scripts/validator.js"></script>
     </head>
 <body>
-    <div class="big-block">
+    <div class="first">
         <h3>Зашифровать сообщение</h3>
         <div class="inner">
-           <form onsubmit="vseok(event)">
+           <h4 class="first-error-string"></h4>
+           <form class="first-form">
             <p>Введите ваше сообщение:<br>
-            <textarea name="raw-to-con" cols="60" rows="6"></textarea></p>
+            <textarea name="text" cols="60" rows="6"></textarea></p>
             <p>Введите ключ (1-32):<br>
-            <textarea name="key-to-con" cols="10" rows="2"></textarea></p>
+            <textarea name="key" cols="10" rows="2"></textarea></p>
             <p><input type="submit" value="Отправить">
             <input type="reset" value="Очистить"></p>
            </form>
         </div>
         <div class="outer">
             <p>Ваше зашифрованное сообщение:</p>
-            <p class="outer-content"></p>
+            <p class="first-success-string"></p>
         </div>
     </div>
-    <div class="big-block">
+    <div class="second">
         <h3>Расшифровать сообщение</h3>
         <div class="inner">
-           <form class="sec-form">
+           <h4 class="second-error-string"></h4>
+           <form class="second-form">
             <p>Введите сообщение для расшифровки:<br>
-            <textarea name="raw-to-decon" cols="60" rows="6"></textarea></p>
+            <textarea name="text" cols="60" rows="6"></textarea></p>
             <p>Введите ключ (1-32):<br>
-            <textarea name="key-to-decon" cols="10" rows="2"></textarea></p>
+            <textarea name="key" cols="10" rows="2"></textarea></p>
             <p><input type="submit" value="Отправить">
             <input type="reset" value="Очистить"></p>
            </form>
         </div>
         <div class="outer">
             <p>Ваше расшифрованное сообщение:</p>
-            <p class="outer-content"></p>
+            <p class="second-success-string"></p>
         </div>
     </div>
+    <script src="scripts/dictionaries.js"></script>
+    <script src="scripts/converter.js"></script>
+    <script src="scripts/deconverter.js"></script>
+    <script src="scripts/validator.js"></script>
+    <script src="scripts/submitter.js"></script>
     <script type="text/javascript">
-        $(document).ready(hello());
-        $(".sec-form").submit( function( event ) {
-            event.preventDefault();
-            console.log('super')
-        });
-        function vseok (event) {
-            event.preventDefault();
-            console.log(event)
-            console.log(event.target.elements['raw-to-con'].value)
-            console.log(event.target.elements['key-to-con'].value)
-        }
+        $('.first-form').submit((event) => submitForm(event, 'first'));
+        $('.second-form').submit((event) => submitForm(event, 'second'));
     </script>
 </body>
 </html>

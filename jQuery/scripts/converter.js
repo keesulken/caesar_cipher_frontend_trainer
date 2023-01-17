@@ -1,11 +1,8 @@
-import { dict, dictUpper } from dictionaries;
-
-
 function innerSwap (letter, array, shift) {
-    if ((array.indexOf(letter) + shift) <= array.length) {
-        return (array[(array.indexOf(letter) + shift)]);
+    if ((array.indexOf(letter) + Number(shift)) < array.length) {
+        return (array[(array.indexOf(letter) + Number(shift))]);
     } else {
-        return (array[(array.indexOf(letter) + shift) - 33]);
+        return (array[(array.indexOf(letter) + Number(shift)) - 33]);
     }
 }
 
@@ -23,5 +20,3 @@ function convert (text, iter) {
     }
     return result.join('');
 }
-
-export default convert;

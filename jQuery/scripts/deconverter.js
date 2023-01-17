@@ -1,6 +1,3 @@
-import { dict, dictUpper } from dictionaries;
-
-
 function deconvSwap (letter, array, shift) {
     if ((array.indexOf(letter) - shift) >= 0) {
         return (array[(array.indexOf(letter) - shift)]);
@@ -23,5 +20,3 @@ function deconvert (text, iter) {
     }
     return result.join('');
 }
-
-export default deconvert;
