@@ -23,3 +23,5 @@ function deconvert (text, iter) {
     }
     return result.join('');
 }
+
+export default deconvert;

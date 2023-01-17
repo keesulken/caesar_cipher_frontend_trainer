@@ -23,3 +23,5 @@ function convert (text, iter) {
     }
     return result.join('');
 }
+
+export default convert;

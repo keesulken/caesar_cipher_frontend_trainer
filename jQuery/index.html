@@ -4,21 +4,7 @@
         <title>Шифр Цезаря</title>
         <link rel="stylesheet" href="styles/styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                console.log('start')
-                });
-            $(".sec-form").on('submit', function( event ) {
-                event.preventDefault();
-                console.log('super')
-            });
-            function vseok (event) {
-                event.preventDefault();
-                console.log(event)
-                console.log(event.target.elements['raw-to-con'].value)
-                console.log(event.target.elements['key-to-con'].value)
-            }
-        </script>
+        <script type='module' src="scripts/validator.js"></script>
     </head>
 <body>
     <div class="big-block">
@@ -55,5 +41,18 @@
             <p class="outer-content"></p>
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(hello());
+        $(".sec-form").submit( function( event ) {
+            event.preventDefault();
+            console.log('super')
+        });
+        function vseok (event) {
+            event.preventDefault();
+            console.log(event)
+            console.log(event.target.elements['raw-to-con'].value)
+            console.log(event.target.elements['key-to-con'].value)
+        }
+    </script>
 </body>
 </html>
